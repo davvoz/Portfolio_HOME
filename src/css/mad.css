@@ -1,0 +1,146 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive; /* Font assurdo */
+    background-color: #121212;
+    color: #ffffff;
+    overflow-x: hidden;
+    animation: shake 5s infinite; /* Animazione psichedelica */
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: #1c1c1c;
+    color: #FFBF00;
+    font-size: 48px; /* Dimensione font incrementata */
+    letter-spacing: 10px; /* Spaziatura aumentata */
+    text-transform: uppercase;
+    z-index: 99999;
+    width: 100vw; /* Larghezza schermo */
+    position: fixed;
+    font-family: 'Chiller', fantasy; /* Font assurdo */
+    animation: rainbow 2s infinite, shake 5s infinite; /* Animazioni psichedeliche */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    background-color: #1c1c1c;
+    border-radius: 50%; /* Bordo circolare */
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-10px) rotate(180deg); /* Rotazione al passaggio del mouse */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #FF0080, #8000FF);
+    opacity: 0.5;
+    z-index: -1;
+    animation: shake 1s forwards; /* Animazione psichedelica */
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 36px; /* Dimensione font incrementata */
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-family: 'Impact', fantasy; /* Font assurdo */
+    animation: shake 5s infinite; /* Animazione psichedelica */
+}
+
+.card-text {
+    color: #ffffff;
+    line-height: 1.5;
+    font-family: 'Courier New', monospace; /* Font assurdo */
+    animation: shake 5s infinite; /* Animazione psichedelica */
+}
+
+.btn {
+    background-color: #FFBF00;
+    color: #121212;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 20px; /* Padding incrementato */
+    display: inline-block;
+    margin-top: 40px; /* Margine incrementato */
+    transition: transform 0.3s ease;
+    font-family: 'Arial Black', sans-serif; /* Font assurdo */
+    animation: shake 5s infinite; /* Animazione psichedelica */
+}
+
+.btn:hover {
+    transform: scale(2); /* Dimensione incrementata al passaggio del mouse */
+    background-color: #ffcc00;
+    color: #121212;
+    animation: shake 5s infinite; /* Animazione psichedelica */
+}
+
+.animated-text {
+    font-size: 48px; /* Dimensione font incrementata */
+    font-weight: bold;
+    color: #FFBF00;
+    animation: rainbow 2s infinite, shake 1s forwards; /* Animazioni psichedeliche */
+    font-family: 'Stencil', fantasy; /* Font assurdo */
+}
+
+@keyframes rainbow {
+    0% {
+        color: #FF0080;
+    }
+    25% {
+        color: #8000FF;
+    }
+    50% {
+        color: #00FF00;
+    }
+    75% {
+        color: #FFFF00;
+    }
+    100% {
+        color: #FF0000;
+    }
+}
+
+@keyframes shake {
+    0% { stroke: yellowgreen; }
+    25% { transform: scale3d(1.05, 1.05, 1.05); }
+    50% { transform: rotate(90deg); }
+    75% { transform: scale3d(1.05, 1.05, 1.05); }
+    100% { transform: rotate(0deg); }
+}
