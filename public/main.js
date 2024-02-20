@@ -59,8 +59,8 @@ infoProgetti.forEach((progetto) => {
     <div class="card-body">
         <h5 class="card-title">${progetto.nome}</h5>
         <p class="card-text">${progetto.descrizione}</p>
-        <a  class="btn btn-primary" class="btn btn-primary" onclick="checkAndOpen('${progetto.link}', '_blank')">Demo   <i class="fas fa-external-link-alt"></i></a>
-        <a  class="btn btn-primary" class="btn btn-primary" onclick="checkAndOpen('${progetto.gitHub}', '_blank')">GitHub   <i class="fab fa-github"></i></a>
+        <a  class="btn" onclick="checkAndOpen('${progetto.link}', '_blank')">Demo   <i class="fas fa-external-link-alt"></i></a>
+        <a  class="btn" onclick="checkAndOpen('${progetto.gitHub}', '_blank')">GitHub   <i class="fab fa-github"></i></a>
         </div>`;
     container.appendChild(card);
 });
@@ -83,7 +83,7 @@ function changeTheme(theme) {
 function createHeader() {
     const headerElement = document.createElement('header');
     headerElement.innerHTML = '<h1>Portfolio</h1>';
-    headerElement.classList.add('header');
+    headerElement.classList.add('header','animated-text');
     return headerElement;
 }
 
@@ -92,19 +92,4 @@ function createContainer() {
     const containerElement = document.createElement('div');
     containerElement.classList.add('container');
     return containerElement;
-}
-
-// Function for creating the select element given a list of options
-function createSelectElement(options, callback) {
-    const selectElement = document.createElement('select');
-    selectElement.classList.add('form-select');
-    selectElement.setAttribute('aria-label', 'Default select example');
-    selectElement.addEventListener('change', (event) => callback(event.target.value));
-    options.forEach((option) => {
-        const optionElement = document.createElement('option');
-        optionElement.value = option;
-        optionElement.textContent = option;
-        selectElement.appendChild(optionElement);
-    });
-    return selectElement;
 }

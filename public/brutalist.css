@@ -103,7 +103,7 @@ body {
     font-size: 18px;
     font-weight: bold;
     color: #FFBF00;
-    animation: rainbow 2s infinite;
+    animation: rainbow 20s infinite;
 }
 
 @keyframes rainbow {
@@ -156,5 +156,34 @@ a {
     transition: color 0.5s ease;
     /*pointer*/
     cursor: pointer;
+
+}
+
+/*su mobile si vede troppo piccolo , testi e bottooni immagini sono troppo piccoli*/
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 40px);
+    }
+
+    .card-img-top {
+        height: 150px;
+    }
+
+    .card-title {
+        font-size: 20px;
+    }
+
+    .card-text {
+        font-size: 16px;
+    }
+
+    .btn {
+        font-size: 200%;
+    }
+
+    .header {
+        font-size: 20px;
+    }
+
 
 }
