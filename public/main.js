@@ -3,6 +3,7 @@ const progetto2Descrizione = `Questo codice HTML e JavaScript crea una galleria 
 const progetto3Descrizione = `Combina due notebook preesistenti. Uno è Stable Diffusion Deforum, specializzato nella creazione di animazioni, mentre l'altro implementa GFPGAN, un algoritmo per migliorare la risoluzione delle immagini. La combinazione di queste due tecnologie offre uno strumento potente per la manipolazione e l'elaborazione delle immagini, incluso l'upscaling dei video. Il progetto fornisce una base solida per ulteriori sviluppi e personalizzazioni.`;
 const progetto4Descrizione = `Questa applicazione web si connette alla blockchain di Ethereum tramite MetaMask, permettendo agli utenti di interagire con la blockchain in modo semplice e intuitivo. Utilizzando animazioni CSS, l'applicazione visualizza in tempo reale l'indirizzo dell'account connesso, il saldo in Ether e il saldo equivalente in Euro. Il pulsante "Connect to MetaMask" semplifica la connessione dell'utente, offrendo un'esperienza fluida e accessibile.`;
 const progetto1aDescrizione = `Questo codice HTML crea una pagina web per un pannello di amministrazione di una galleria di immagini. La pagina include un form per aggiungere nuove immagini, pulsanti per scorrere avanti e indietro tra le immagini, un menu a tendina per filtrare le immagini per categoria e un'area per visualizzare le immagini. Le immagini sono caricate su Firebase Storage e i loro metadati (titolo, descrizione, categoria) sono memorizzati in un database Firestore di Firebase. Gli utenti possono anche modificare e eliminare le immagini tramite il pannello di amministrazione. Il codice JavaScript gestisce la comunicazione con Firebase per caricare, recuperare, aggiornare ed eliminare le immagini.`;
+const progetto5Descrizione = `L'ambiente creato da questo codice offre un'esperienza audiovisiva coinvolgente e interattiva, integrando in modo innovativo l'analisi del flusso audio con effetti grafici dinamici.Audio di Qualità e Interattività Visiva:L'inizializzazione dell'AudioContext e l'acquisizione del flusso audio tramite getUserMedia garantiscono un audio di alta qualità proveniente dal microfono del dispositivo. Questo flusso audio viene poi analizzato dall'AnalyserNode, permettendo agli effetti grafici di reagire in tempo reale alle frequenze audio.Design Modulare e Personalizzazione:Il codice è strutturato in modo modulare, con classi ben definite per gestire sia gli elementi grafici che gli effetti visivi. Questa struttura offre flessibilità e facilità di personalizzazione, consentendo agli sviluppatori di creare e integrare nuovi effetti grafici con facilità.Effetti Grafici Dinamici e Coinvolgenti: Le varie classi di effetti grafici, come TunnelEffect, StarRainEffect e MadDancingShapesEffect, offrono una vasta gamma di esperienze visive, da spirali rotanti a stelle cadenti, il tutto arricchito da colori vibranti e movimenti fluidi.Interazione Intuitiva e Reattività: La classe GUIFramework gestisce in modo efficiente l'interazione utente, consentendo di cliccare su pulsanti e caselle di controllo per attivare o disattivare gli effetti grafici. Inoltre, la visualizzazione grafica viene costantemente aggiornata in tempo reale, garantendo una reattività immediata alle azioni dell'utente e alle variazioni nel flusso audio.Esperienza Immersiva e Creativa Complessivamente, l'ambiente creato da questo codice offre un'esperienza audiovisiva immersiva e creativa, che cattura l'attenzione dell'utente e stimola la sua creatività. Con una combinazione di audio di qualità, effetti grafici dinamici e interazione intuitiva, questo ambiente rappresenta un'ottima piattaforma per esplorare e sperimentare con l'arte digitale e l'interattività multimediale   `;
 
 const infoProgetti = [
 
@@ -39,6 +40,13 @@ const infoProgetti = [
         immagine: 'img/proj1.png',
         link: 'https://seqanco.surge.sh/',
         gitHub: 'https://github.com/davvoz/Seqanco/tree/master/src'
+    },
+    {
+        nome: 'Audio Visualizer',
+        descrizione: progetto5Descrizione,
+        immagine: 'img/proj5.png',
+        link: 'https://davvoz.github.io/AudioVisualizer/',
+        gitHub: 'https://github.com/davvoz/VisualFXs/blob/master/public/index.html'
     }
 ];
 
