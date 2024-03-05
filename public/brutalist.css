@@ -184,6 +184,9 @@ a {
     .header {
         font-size: 20px;
     }
-
+/* le icone sono troppo piccole */
+    .fa {
+        font-size: 24px;
+    }
 
 }
