@@ -24,6 +24,9 @@ progettiRef.get().then((querySnapshot) => {
         console.log(doc.data());
         infoProgetti.push(doc.data());
     });
+    //ordina infoProgetti in base al campo ordine
+    infoProgetti.sort((a, b) => (a.ordine > b.ordine) ? 1 : -1);
+    
 
     // Dopo aver ottenuto i dati, aggiungi le carte al container
     infoProgetti.forEach((progetto) => {
