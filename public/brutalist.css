@@ -67,7 +67,8 @@ body {
 }
 
 .card-body {
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-title {
@@ -91,6 +92,7 @@ body {
     display: inline-block;
     margin-top: 20px;
     transition: transform 0.3s ease;
+
 }
 
 .btn:hover {
@@ -161,44 +163,21 @@ a {
 
 /*su mobile si vede troppo piccolo , testi e bottooni immagini sono troppo piccoli*/
 @media (max-width: 768px) {
-    .card {
-        width: calc(50% - 40px);
-    }
-
-    .card-img-top {
-        height: 150px;
-    }
-
-    .card-title {
-        font-size: 20px;
-    }
-
-    .card-text {
-        font-size: 16px;
-    }
-
+    
     .btn {
-        font-size: 200%;
+        font-size: -webkit-xxx-large;
     }
-
-    .header {
-        font-size: 20px;
-    }
-/* le icone sono troppo piccole */
-    .fa {
-        font-size: 24px;
-    }
-
 }
 
-.form{
+.form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
 }
-input{
+
+input {
     padding: 10px;
     margin: 10px;
     border-radius: 5px;
@@ -206,7 +185,8 @@ input{
     width: 300px;
     text-align: center;
 }
-.form button{
+
+.form button {
     padding: 10px 20px;
     border-radius: 5px;
     border: none;
@@ -214,4 +194,18 @@ input{
     color: #121212;
     cursor: pointer;
     transition: transform 0.3s ease;
+}
+
+.card-half-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-half-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

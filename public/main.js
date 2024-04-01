@@ -48,13 +48,27 @@ function createCard(progetto) {
     const card = document.createElement('div');
     card.classList.add('card');
     card.innerHTML = `
-    <img src="${progetto.immagine}" alt="${progetto.nome}" class="card-img-top">
     <div class="card-body">
-        <h5 class="card-title">${progetto.nome}</h5>
-        <p class="card-text">${progetto.descrizione}</p>
-        <a href="#" class="btn" onclick="checkAndOpen('${progetto.link}', '_blank')">Demo   <i class="fas fa-external-link-alt"></i></a>
-        <a href="#" class="btn" onclick="checkAndOpen('${progetto.gitHub}', '_blank')">GitHub
-        <i class="fab fa-github"></i></a>
+        <div class="card-half-top">
+        <img src="${progetto.immagine}" alt="${progetto.nome}" class="card-img-top">
+            <h2 class="card-title">${progetto.nome}</h2>
+            <p class="card-text">${progetto.descrizione}</p>
+        </div>
+        <div class="card-half-bottom">
+            <div class="buttons" style="
+                display: flex;
+                align-items: flex-end;
+                flex-direction: row;
+                align-content: center;
+                justify-content: space-between;
+                ">
+                <button class="btn" onclick="checkAndOpen('${progetto.link}', '_blank')">Demo  
+                    <i class="fas fa-external-link-alt"></i></button>
+                <button class="btn" onclick="checkAndOpen('${progetto.gitHub}', '_blank')">GitHub
+                    <i class="fab fa-github"></i>
+                </button>
+            </div>
+        </div>
     </div>`;
     return card;
 }

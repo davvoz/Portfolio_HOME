@@ -59,8 +59,8 @@ infoProgetti.forEach((progetto) => {
     <div class="card-body">
         <h5 class="card-title">${progetto.nome}</h5>
         <p class="card-text">${progetto.descrizione}</p>
-        <a  class="btn btn-primary" class="btn btn-primary onclick="checkAndOpen('${progetto.link}', '_blank')">Demo   <i class="fas fa-external-link-alt"></i></a>
-        <a  class="btn btn-primary" class="btn btn-primary onclick="checkAndOpen('${progetto.gitHub}', '_blank')">GitHub   <i class="fab fa-github"></i></a>
+        <a  class="btn btn-primary" onclick="checkAndOpen('${progetto.link}', '_blank')">Demo   <i class="fas fa-external-link-alt"></i></a>
+        <a  class="btn btn-primary" onclick="checkAndOpen('${progetto.gitHub}', '_blank')">GitHub   <i class="fab fa-github"></i></a>
         </div>`;
     container.appendChild(card);
 });
