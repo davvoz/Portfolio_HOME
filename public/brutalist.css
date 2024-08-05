@@ -1,4 +1,4 @@
-/* Reset CSS */
+/* Global Reset */
 * {
     margin: 0;
     padding: 0;
@@ -12,6 +12,7 @@ body {
     overflow-x: hidden;
 }
 
+/* Header Styles */
 .header {
     text-align: center;
     padding: 20px;
@@ -20,10 +21,11 @@ body {
     font-size: 24px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    z-index: 99999;
-    width: -webkit-fill-available;
+    z-index: 9999;
+    width: 100%;
 }
 
+/* Container Styles */
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
@@ -32,6 +34,7 @@ body {
     padding: 20px;
 }
 
+/* Card Styles */
 .card {
     background-color: #1c1c1c;
     border-radius: 20px;
@@ -69,6 +72,7 @@ body {
 .card-body {
     display: flex;
     flex-direction: column;
+    padding: 20px;
 }
 
 .card-title {
@@ -83,6 +87,7 @@ body {
     line-height: 1.5;
 }
 
+/* Button Styles */
 .btn {
     background-color: #FFBF00;
     color: #121212;
@@ -92,7 +97,6 @@ body {
     display: inline-block;
     margin-top: 20px;
     transition: transform 0.3s ease;
-
 }
 
 .btn:hover {
@@ -101,6 +105,7 @@ body {
     color: #121212;
 }
 
+/* Animated Text */
 .animated-text {
     font-size: 18px;
     font-weight: bold;
@@ -108,67 +113,32 @@ body {
     animation: rainbow 20s infinite;
 }
 
+/* Keyframes for Animations */
 @keyframes rainbow {
-    0% {
-        color: #FF0080;
-    }
-
-    25% {
-        color: #8000FF;
-    }
-
-    50% {
-        color: #00FF00;
-    }
-
-    75% {
-        color: #FFFF00;
-    }
-
-    100% {
-        color: #FF0000;
-    }
+    0% { color: #FF0080; }
+    25% { color: #8000FF; }
+    50% { color: #00FF00; }
+    75% { color: #FFFF00; }
+    100% { color: #FF0000; }
 }
 
 @keyframes shake {
-    0% {
-        stroke: yellowgreen;
-    }
-
-    25% {
-        transform: scale3d(1.05, 1.05, 1.05);
-    }
-
-    50% {
-        transform: rotate(90deg);
-    }
-
-    75% {
-        transform: scale3d(1.05, 1.05, 1.05);
-    }
-
-    100% {
-        transform: rotate(0deg);
-    }
+    0% { transform: scale(1); }
+    25% { transform: scale(1.05); }
+    50% { transform: rotate(90deg); }
+    75% { transform: scale(1.05); }
+    100% { transform: rotate(0deg); }
 }
 
+/* Link Styles */
 a {
     color: #FFBF00;
     text-decoration: none;
     transition: color 0.5s ease;
-    /*pointer*/
     cursor: pointer;
-
 }
 
-/*su mobile si vede troppo piccolo , testi e bottooni immagini sono troppo piccoli*/
-@media (max-width: 768px) {
-    
-    .btn {
-        font-size: -webkit-xxx-large;
-    }
-}
-
+/* Form Styles */
 .form {
     display: flex;
     flex-direction: column;
@@ -196,16 +166,74 @@ input {
     transition: transform 0.3s ease;
 }
 
-.card-half-top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .btn {
+        font-size: 1.5rem;
+    }
 }
 
+/* Card Content Alignment */
+.card-half-top,
 .card-half-bottom {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
+.card-half-top {
+    padding: 20px;
+}
+
+.card-half-bottom {
+    padding: 20px;
+}
+
+/* Card Image Styles */
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+/* Card Body Styles */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+/* Button Styles */
+.btn {
+    background-color: #FFBF00;
+    color: #121212;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    background-color: #ffcc00;
+    color: #121212;
+}
+
+

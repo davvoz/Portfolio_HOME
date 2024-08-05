@@ -1,9 +1,16 @@
 //creiamo il pannello di amministrazione per fare la CRUD sui progetti
 document.title = 'Pannello di amministrazione';
 const firebaseConfig = {
-   
+    apiKey: "",
+    authDomain: "wada-42dd4.firebaseapp.com",
+    databaseURL: "https://wada-42dd4.firebaseio.com",
+    projectId: "wada-42dd4",
+    storageBucket: "wada-42dd4.appspot.com",
+    messagingSenderId: "87083060977",
+    appId: "1:87083060977:web:a525a46e147b0f0e7a2350"
 };
 
+const firebase = require('firebase/app');
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
