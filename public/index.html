@@ -1,194 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #121212;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-        }
-
-        .intro {
-            text-align: center;
-            padding: 50px 20px;
-            background-color: #1e1e1e;
-        }
-
-        .intro h1 {
-            font-size: 48px;
-            margin: 0;
-            color: #00e676;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        .intro p {
-            font-size: 24px;
-            color: #c9d1d9;
-            margin: 20px 0 0;
-            animation: fadeIn 4s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .header {
-            text-align: center;
-            margin: 40px 0;
-            font-size: 36px;
-            font-weight: bold;
-            text-transform: uppercase;
-            color: #00e676;
-        }
-
-        .project-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 40px 20px;
-            transition: background-color 0.3s;
-        }
-
-        .project-section:nth-child(odd) {
-            background-color: #1e1e1e;
-        }
-
-        .project-section:nth-child(even) {
-            background-color: #0d1117;
-        }
-
-        .project-content {
-            max-width: 800px;
-            text-align: center;
-        }
-
-        .project-title {
-            font-size: 28px;
-            margin: 20px 0;
-            color: #58a6ff;
-        }
-
-        .project-description {
-            font-size: 18px;
-            line-height: 1.6;
-            margin: 20px 0;
-        }
-
-        .project-img {
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-
-        .project-links {
-            margin: 20px 0;
-        }
-
-        .btn {
-            padding: 10px 20px;
-            background-color: #00e676;
-            color: #0d1117;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            text-align: center;
-            font-size: 16px;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin: 10px;
-            transition: background-color 0.3s;
-        }
-
-        .btn i {
-            margin-left: 8px;
-        }
-
-        .btn:hover {
-            background-color: #00b248;
-        }
-
-        .contact-section {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #1e1e1e;
-        }
-
-        .contact-section h2 {
-            font-size: 36px;
-            margin: 0 0 20px;
-            color: #00e676;
-        }
-
-        .contact-section p {
-            font-size: 18px;
-            margin: 0 0 20px;
-        }
-
-        .contact-section .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .contact-section .contact-links a {
-            color: #00e676;
-            font-size: 24px;
-            transition: color 0.3s;
-        }
-
-        .contact-section .contact-links a:hover {
-            color: #00b248;
-        }
-
-        ol {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .section {
-            margin: 20px 0;
-            /*testo a sinistra*/
-            align-items: center;
-            text-align: left;
-        }
-    </style>
+    <title>Portfolio Interattivo 2.0</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="intro">
         <h1>Benvenuti nel mio Portfolio</h1>
         <p>Scopri i miei progetti e il mio lavoro.</p>
     </div>
+
     <h1 class="header">I miei progetti</h1>
 
     <div id="projects-container"></div>
 
     <div class="contact-section">
         <h2>Contattami</h2>
-        <p>Puoi trovarmi sui seguenti social media:</p>
+        <p>Sei interessato a collaborare? Raggiungiamoci sui social!</p>
         <div class="contact-links">
-            <a href="https://github.com/tuoaccount" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/tuoaccount" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:tuoemail@example.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/davvoz" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/david-bazzoli-a57064129/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:dbazzoliup@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
     </div>
 
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.6.8/firebase-app.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.6.8/firebase-firestore.min.js"></script>
     <script>
         // Inizializza Firebase
         const firebaseConfig = {
@@ -218,6 +58,24 @@
                 const projectSection = createProjectSection(project, index);
                 projectsContainer.appendChild(projectSection);
             });
+
+            // Aggiungi animazioni di scroll
+            const projectSections = document.querySelectorAll('.project-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            projectSections.forEach(section => {
+                section.style.opacity = 0;
+                section.style.transform = 'translateY(50px)';
+                section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(section);
+            });
         });
 
         function createProjectSection(project, index) {
@@ -227,16 +85,23 @@
             let linksHTML = '';
             if (project.link) {
                 linksHTML += `
-                    <button class="btn" onclick="openLink('${project.link}', '_blank')">Demo
-                        <i class="fas fa-external-link-alt"></i>
+                    <button class="btn" onclick="openLink('${project.link}', '_blank')">
+                        <i class="fas fa-external-link-alt"></i> Demo
                     </button>`;
             }
 
             if (project.gitHub) {
                 linksHTML += `
-                    <button class="btn" onclick="openLink('${project.gitHub}', '_blank')">GitHub
-                        <i class="fab fa-github"></i>
+                    <button class="btn" onclick="openLink('${project.gitHub}', '_blank')">
+                        <i class="fab fa-github"></i> GitHub
                     </button>`;
+            }
+
+            let skillTagsHTML = '';
+            if (project.skills && project.skills.length > 0) {
+                skillTagsHTML = '<div class="skill-tags">' +
+                    project.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('') +
+                    '</div>';
             }
 
             projectSection.innerHTML = `
@@ -244,6 +109,7 @@
                     <h2 class="project-title">${project.nome}</h2>
                     <img src="${project.immagine}" alt="${project.nome}" class="project-img">
                     <p class="project-description">${project.descrizione}</p>
+                    ${skillTagsHTML}
                     <div class="project-links">
                         ${linksHTML}
                     </div>
