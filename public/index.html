@@ -6,14 +6,81 @@
     <title>Portfolio Interattivo 2.0</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ... (Mantenere gli stili CSS esistenti) ... */
+
+        /* Nuovi stili per il menu di navigazione */
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(18, 18, 18, 0.9);
+            padding: 10px 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu.hidden {
+            transform: translateY(-100%);
+        }
+
+        .nav-menu ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-menu li {
+            margin: 0 15px;
+        }
+
+        .nav-menu a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Stili responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                padding: 5px 0;
+            }
+
+            .nav-menu ul {
+                flex-wrap: wrap;
+            }
+
+            .nav-menu li {
+                margin: 5px 10px;
+            }
+
+            .nav-menu a {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="intro">
+    
+    <nav class="nav-menu">
+        <ul id="menu-items">
+            <!-- I link del menu verranno generati dinamicamente -->
+        </ul>
+    </nav>
+
+    <div class="intro" id="top">
         <h1>Benvenuti nel mio Portfolio</h1>
         <p>Scopri i miei progetti e il mio lavoro.</p>
     </div>
-
-    <h1 class="header">I miei progetti</h1>
 
     <div id="projects-container"></div>
 
@@ -30,6 +97,39 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.6.8/firebase-app.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.6.8/firebase-firestore.min.js"></script>
     <script>
+                const navMenu = document.querySelector('.nav-menu');
+        const menuItems = document.getElementById('menu-items');
+        let lastScrollTop = 0;
+
+        function createMenuItems(projects) {
+            menuItems.innerHTML = '<li><a href="#top">Home</a></li>';
+            projects.forEach((project, index) => {
+                menuItems.innerHTML += `<li><a href="#project-${index}">${project.nome}</a></li>`;
+            });
+        }
+
+        function handleScroll() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                navMenu.classList.add('hidden');
+            } else {
+                navMenu.classList.remove('hidden');
+            }
+            lastScrollTop = scrollTop;
+        }
+
+        window.addEventListener('scroll', handleScroll);
+
+        function scrollToProject(event) {
+            event.preventDefault();
+            const targetId = event.target.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        menuItems.addEventListener('click', scrollToProject);
         // Inizializza Firebase
         const firebaseConfig = {
             apiKey: "",
@@ -53,6 +153,8 @@
             });
 
             projects.sort((a, b) => a.ordine - b.ordine);
+
+            createMenuItems(projects);
 
             projects.forEach((project, index) => {
                 const projectSection = createProjectSection(project, index);
@@ -81,6 +183,7 @@
         function createProjectSection(project, index) {
             const projectSection = document.createElement('div');
             projectSection.classList.add('project-section');
+            projectSection.id = `project-${index}`;
 
             let linksHTML = '';
             if (project.link) {
